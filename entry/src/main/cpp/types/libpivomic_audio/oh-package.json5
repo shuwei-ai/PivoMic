@@ -1,0 +1,5 @@
+{
+  "name": "libpivomic_audio.so",
+  "version": "1.0.0",
+  "description": "Type declarations for the PivoMic native audio engine"
+}

@@ -1,0 +1,88 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/lsy/.ohos/config/default_PivoMic_BTqmxpnEml0tX-6UyJprmP8i7L0h2gdaGbqvn-eErgs=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BC8F0D3161BDD1DBF97C3D02FB667EED9BE6B40FE39075FCFC0B7C6FF4DD6B4AD4C246B99A1AE82",
+          "profile": "/Users/lsy/.ohos/config/default_PivoMic_BTqmxpnEml0tX-6UyJprmP8i7L0h2gdaGbqvn-eErgs=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/lsy/.ohos/config/default_PivoMic_BTqmxpnEml0tX-6UyJprmP8i7L0h2gdaGbqvn-eErgs=.p12",
+          "storePassword": "0000001B8CD8C8DAC94A43FCD0624078E4C83BB9652B8E6540ACFAA7C95E3EC512BB682AF5B5E5868532C9"
+        }
+      },
+      {
+        "name": "release",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "/Users/lsy/code/PivoMic/pivomic.p12",
+          "storePassword": "00000028D3405F8BA7AD7C6034ADFB6850B2FE2C807C1733937F448EB41CEA93C6300B917DB6DB7D645206C05650BB2B4EDEDF0351465108",
+          "keyAlias": "pivomic",
+          "keyPassword": "000000282241CD2EB69462C50B87DCCFBEBEE0568EEAB728C49A9402A3FF10FBBA087D420B72F2574F66ABCC54E2B187B2E5AF1FDA9E4305",
+          "signAlg": "SHA256withECDSA",
+          "profile": "/Users/lsy/code/PivoMic/pivomicRelease.p7b",
+          "certpath": "/Users/lsy/code/PivoMic/pivomic.cer"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.1.1(24)",
+        "compatibleSdkVersion": "6.1.1(24)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      },
+      {
+        "name": "release",
+        "signingConfig": "release",
+        "targetSdkVersion": "6.1.1(24)",
+        "compatibleSdkVersion": "6.1.1(24)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        },
+        {
+          "name": "release",
+          "applyToProducts": [
+            "release"
+          ]
+        }
+      ]
+    }
+  ]
+}

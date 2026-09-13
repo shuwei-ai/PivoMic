@@ -1,0 +1,45 @@
+export interface NativeEngineSnapshot {
+  state: 'Idle' | 'Preparing' | 'Ready' | 'Singing' | 'Paused' | 'Interrupted' | 'Error';
+  positionMs: number;
+  durationMs: number;
+  microphonePeak: number;
+  latencyMs: number;
+  underrunCount: number;
+  fastMode: boolean;
+  aecSupported: boolean;
+  audioRoute: number;
+  accompanimentPitchShift: number;
+  pitchCorrectionEnabled: boolean;
+  pitchCorrectionStrength: number;
+  isRecording: boolean;
+  recordedDurationMs: number;
+  resumeRequested?: boolean;
+  isDucked?: boolean;
+  errorCode: number;
+  errorMessage: string;
+}
+
+export function prepare(fd: number, offset: number, size: number, durationMs: number): boolean;
+export function start(): boolean;
+export function pause(): boolean;
+export function seek(positionMs: number): boolean;
+export function stop(): boolean;
+export function release(): void;
+export function setSafeOutputConnected(value: boolean): void;
+export function setAudioRoute(route: number): void;
+export function setAccompanimentGain(value: number): void;
+export function setVocalGain(value: number): void;
+export function setReverbMix(value: number): void;
+export function setAntiHowlingEnabled(enabled: boolean): void;
+export function setAecEnabled(enabled: boolean): void;
+export function setSpatialReverbEnabled(enabled: boolean): void;
+export function setReverbPreset(preset: number): void;
+export function setParametricEqEnabled(enabled: boolean): void;
+export function setDeEsserEnabled(enabled: boolean): void;
+export function setVocalDynamicsEnabled(enabled: boolean): void;
+export function setAccompanimentPitchShift(semitones: number): void;
+export function setPitchCorrection(enabled: boolean, strength: number, scaleType: number, rootNote: number): void;
+export function startRecording(): void;
+export function stopRecording(): void;
+export function exportRecording(outputPath: string): boolean;
+export function getSnapshot(): NativeEngineSnapshot;

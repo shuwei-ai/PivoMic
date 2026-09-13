@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "PivoMic"
+    },
+    {
+      "name": "microphone_permission_reason",
+      "value": "用于检测并在后续启用个人 K 歌麦克风输入"
+    }
+  ]
+}
